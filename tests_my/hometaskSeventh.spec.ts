@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { MainPage } from '../pages/mainPage';
 import { ElementsPage } from '../pages/elementsPage';
 
-test.describe('3 tests', ()=>{
+test.describe('3 tests for Hometask 7', ()=>{
     
     test('Navigate to Elements page', async({ page }) =>{
         const navigateToElementsPage = new MainPage(page);
