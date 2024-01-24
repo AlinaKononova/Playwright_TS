@@ -20,6 +20,17 @@ export class ElementsPage {
     readonly noteFolderCheckbox: Locator;
     readonly youHaveSelected: Locator;
 
+    readonly buttons: Locator;
+    readonly buttonDoubleClick: Locator;
+    readonly buttonDoubleClickSuccessMessage: Locator;
+    readonly buttonRightClick: Locator;
+    readonly buttonRightClickSuccessMessage: Locator;
+
+    readonly brokenLinkAndImages: Locator;
+    readonly brokenLink: Locator;
+    readonly validLink: Locator;
+    
+
     constructor(page: Page){
         this.page = page;
         this.textBox = page.locator('//div[1]/div/ul[@class="menu-list"]/li[1]/span[@class="text"]');
@@ -36,6 +47,14 @@ export class ElementsPage {
         this.notesFolder = page.locator('ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-title');
         this.noteFolderCheckbox = page.locator('//ol/li/ol/li[1]/ol/li[1]/span[@class="rct-text"]/label/span[@class="rct-title"]');
         this.youHaveSelected = page.locator('//div[@id="result"]/span[@class="text-success"]');
+        this.buttons = page.locator('//div[1]/div/ul[@class="menu-list"]/li[5]/span[@class="text"]');
+        this.buttonDoubleClick = page.locator('//button[@id="doubleClickBtn"]');
+        this.buttonRightClick = page.locator('//button[@id="rightClickBtn"]');
+        this.buttonDoubleClickSuccessMessage = page.locator('//p[@id="doubleClickMessage"]');
+        this.buttonRightClickSuccessMessage = page.locator('//p[@id="rightClickMessage"]');
+        this.brokenLinkAndImages = page.locator('//div[1]/div/ul[@class="menu-list"]/li[7]/span[@class="text"]');
+        this.brokenLink = page.locator('//div[@class="body-height"]//a[@href="http://the-internet.herokuapp.com/status_codes/500"]');
+        this.validLink = page.locator('//div[@class="body-height"]//a[@href="http://demoqa.com"]');
     }
 
     async checkElementsTitleIsPresentOnPage(){
